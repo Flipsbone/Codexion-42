@@ -77,10 +77,10 @@ To validate the robustness of the multithreaded architecture and the scheduling 
 ### 5. Rigorous Memory Management
 * **Objective:** Verify that no memory leaks occur, even in the event of a premature simulation stop.
 * **Executed Commands:**
-  1. Natural finish: `valgrind -s --leak-check=full [...] ./codexion 4 600 100 50 50 2 10 edf`
-  2. Premature finish: `valgrind -s --leak-check=full [...] ./codexion 3 50 200 0 0 1 0 fifo`
+  1. Natural finish: `valgrind -s --leak-check=full ./codexion 4 600 100 50 50 2 10 edf`
+  2. Premature finish: `valgrind -s --leak-check=full ./codexion 3 50 200 0 0 1 0 fifo`
 * **Observed Result:** In both cases, Valgrind confirms: `All heap blocks were freed -- no leaks are possible`.
-* **Analysis:** The cleanup module is highly robust. Regardless of why the program stops, all dynamically allocated memory structures (`malloc`) are freed, and all Mutexes are cleanly destroyed before the process terminates.
+* **Analysis:** The cleanup module is robust. Regardless of why the program stops, all dynamically allocated memory structures (`malloc`) are freed, and all Mutexes are cleanly destroyed before the process terminates.
 
 ### 6. Full Survival (Simulation Finished)
 * **Objective:** Demonstrate a scenario where resources and timings allow all threads to complete their required tasks without any burnouts.
