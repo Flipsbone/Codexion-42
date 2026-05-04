@@ -6,7 +6,7 @@
 /*   By: advacher <advacher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 10:25:21 by advacher          #+#    #+#             */
-/*   Updated: 2026/04/29 11:47:32 by advacher         ###   ########.fr       */
+/*   Updated: 2026/05/04 10:22:34 by advacher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/time.h>
-
 
 int	ft_check_simulation_stop(t_data *data)
 {
@@ -27,7 +26,7 @@ int	ft_check_simulation_stop(t_data *data)
 	return (status);
 }
 
-void	ft_usleep(long time_to_sleep, t_data *data)
+int	ft_usleep(long time_to_sleep, t_data *data)
 {
 	long	start;
 
@@ -35,9 +34,10 @@ void	ft_usleep(long time_to_sleep, t_data *data)
 	while ((ft_get_time() - start) < time_to_sleep)
 	{
 		if (ft_check_simulation_stop(data) != 0)
-			break ;		
-		usleep(1000); 
+			return (1);
+		usleep(1000);
 	}
+	return (0);
 }
 
 void	ft_print_status(t_data *data, int id, char *status)

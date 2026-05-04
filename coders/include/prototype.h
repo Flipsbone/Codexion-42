@@ -6,7 +6,7 @@
 /*   By: advacher <advacher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 11:36:01 by advacher          #+#    #+#             */
-/*   Updated: 2026/04/29 15:00:09 by advacher         ###   ########.fr       */
+/*   Updated: 2026/05/04 10:09:13 by advacher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_remove_from_queue(t_dongle *dongle, t_coder *coder);
 long	ft_get_last_compile(t_coder *coder);
 long	ft_get_nb_compiles(t_coder *coder);
 
-void	ft_usleep(long time_to_sleep_in_ms, t_data *data);
+int		ft_usleep(long time_to_sleep_in_ms, t_data *data);
 void	ft_print_status(t_data *data, int id, char *status);
 long	ft_get_time(void);
 int		ft_check_simulation_stop(t_data *data);

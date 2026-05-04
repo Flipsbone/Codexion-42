@@ -6,7 +6,7 @@
 /*   By: advacher <advacher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:38:49 by advacher          #+#    #+#             */
-/*   Updated: 2026/04/29 14:59:44 by advacher         ###   ########.fr       */
+/*   Updated: 2026/05/04 10:16:14 by advacher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ long	ft_get_last_compile(t_coder *coder)
 	pthread_mutex_unlock(&coder->data->sim_mutex);
 	return (time);
 }
+
 long	ft_get_nb_compiles(t_coder *coder)
 {
 	long	nb;

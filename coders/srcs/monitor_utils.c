@@ -6,7 +6,7 @@
 /*   By: advacher <advacher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:38:32 by advacher          #+#    #+#             */
-/*   Updated: 2026/04/29 14:20:59 by advacher         ###   ########.fr       */
+/*   Updated: 2026/05/04 09:54:51 by advacher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	ft_check_burnout(t_data *data, int i, long now)
 {
 	long		time;
 	long		start;
-
 
 	if (now - data->coders[i].last_compile_start > data->time_to_burnout)
 	{
